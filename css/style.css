@@ -73,7 +73,7 @@ nav {
   align-items: center;
   transition: 0.3s;
   left: 100%;
-  margin-top: -5%;
+  top: 0;
   background-color: var(--clr_white);
 }
 
@@ -97,6 +97,9 @@ nav button {
   border: none;
   cursor: pointer;
   justify-content: center;
+  position: fixed;
+  left: 20rem;
+  top: 2rem;
 }
 
 .bar {
@@ -104,7 +107,7 @@ nav button {
   width: 40px;
   height: 4px;
   border-radius: 20px;
-  margin: 8px 0 0 auto;
+  margin: 8px 0 0 0;
   transition: all 0.3s ease-in-out;
   background-color: var(--clr_black);
 }
@@ -127,6 +130,8 @@ nav button {
 /* menu active */
 .nav-menu.active {
   left: 0;
+}
+nav button.active {
 }
 main {
   max-width: 1200px;
@@ -265,9 +270,9 @@ footer a {
   text-decoration: underline;
 }
 
-.footer_content div {
+/* .footer_content div {
   margin-block-start: 5rem;
-}
+} */
 .socialmedia {
   display: flex;
   justify-content: space-around;
@@ -296,6 +301,10 @@ footer a {
   font-size: 0.6rem;
   color: var(--clr_2);
   margin: 1rem auto;
+}
+
+.to_top img {
+  width: 100px;
 }
 
 /* --------------------------------- TABLET --------------------------------- */
@@ -330,10 +339,9 @@ footer a {
   /* ***********  footer  *********** */
 
   .footer_content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+
+    justify-content: space-around;
   }
 
   .copyright {
