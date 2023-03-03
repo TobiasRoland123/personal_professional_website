@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+
+  scroll-behavior: smooth;
+}
+
+html {
+  --clr_black: #303030;
+  --clr_white: #fcfcfc;
+  --clr_2: #525252;
+  --clr_3: #d9d9d9;
+  --clr_4: #d9e3e8;
+}
+
+body {
+  background-color: var(--clr_white);
+}
+
+/* ----------------------- Text styling ----------------------- */
+h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+
+  margin: 4rem 0 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4rem 0 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 4rem 0 0;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0 0;
+  max-width: 55ch;
+  line-height: 1.2rem;
+}
+
+/* ----------------------- Navigation ----------------------- */
+
+nav {
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5% 0%;
+  gap: 20px;
+}
+
+.logo-container {
+  width: 80px;
+}
+
+.nav-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  gap: 85px;
+  align-items: center;
+  transition: 0.3s;
+  left: 100%;
+  margin-top: -5%;
+  background-color: var(--clr_white);
+}
+
+.nav-menu li {
+  list-style: none;
+  display: flex;
+  place-items: center;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  margin-inline-start: 0.5rem;
+}
+
+nav button {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.bar {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 20px;
+  margin: 8px 0 0 auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--clr_black);
+}
+
+.bar:nth-child(1) {
+  margin-top: 0;
+}
+
+.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.active .bar:nth-child(3) {
+  transform: translateY(-16px) rotate(-45deg);
+}
+
+/* menu active */
+.nav-menu.active {
+  left: 0;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --------------------------------  Frontpage -------------------------------- */
+
+main > article {
+  margin: 2rem 1rem 0;
+}
+
+section {
+  margin: 2rem 1rem 0;
+}
+.figure_container {
+  display: grid;
+  margin-block-start: 2rem;
+}
+.figure_container img {
+  max-width: 60%;
+  border: solid 1px var(--clr_black);
+  margin: 0 auto;
+  box-shadow: 25px 20px var(--clr_white), 25px 20px 0px 1px var(--clr_black);
+}
+
+/* ---------------- skills --------------- */
+
+.skills_container {
+  background-color: var(--clr_3);
+  border-radius: 10px;
+  padding: 1rem 1rem;
+}
+
+.skill_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+}
+.skill_list li {
+  list-style: none;
+  background-color: var(--clr_white);
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--clr_2);
+  padding: 1rem clamp(1rem, 2rem, 2.5rem);
+}
+.skill_list li.narrow_skill {
+  padding: 1rem 1.5rem;
+}
+
+.skill_list li.wide_skill {
+  padding: 1rem 6rem;
+}
+
+/* ---------------- contact --------------- */
+.contact_form form {
+  display: grid;
+}
+
+.contact_form form label {
+  margin: 2rem 0 0;
+}
+
+.submit {
+  margin: 0rem 0;
+  border: none;
+  background-color: var(--clr_3);
+  padding: 1rem 3rem;
+  border-radius: 7px;
+  display: grid;
+  place-self: end;
+  font-weight: 600;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.input {
+  border: none;
+  background-color: var(--clr_3);
+  height: 3rem;
+  margin: 0.4rem 0;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+}
+
+#message {
+  height: 10rem;
+}
+
+/* -------------------------- Portfolio ---------------------- */
+
+#projects img {
+  box-shadow: 20px 15px var(--clr_white), 20px 15px 0px 1px var(--clr_black);
+}
+
+#projects .figure_container .project {
+  display: grid;
+  margin: 0 auto;
+}
+#projects .figure_container .project h3 {
+  margin: 2rem 0 1rem;
+}
+
+#projects .figure_container .project img {
+  margin-block-end: 2rem;
+}
+
+/* -------------------------- About ---------------------- */
+
+.who_is_he::before {
+  content: url("../images/display_text_and_arrow.png");
+  display: flex;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* -------------------------- Footer ---------------------- */
+
+footer {
+  background-color: var(--clr_3);
+  text-align: center;
+  padding-block-start: 1rem;
+  margin-block-start: 8rem;
+}
+
+footer a {
+  color: var(--clr_black);
+  margin: 2rem auto;
+  display: block;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.footer_content div {
+  margin-block-start: 5rem;
+}
+.socialmedia {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.socialmedia li a img {
+  width: 50px;
+}
+
+.navigate ul li {
+  list-style: none;
+}
+
+.contact_footer a {
+  text-decoration: none;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0 0.5rem;
+}
+
+.copyright p {
+  font-size: 0.6rem;
+  color: var(--clr_2);
+  margin: 1rem auto;
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+
+@media (min-width: 700px) {
+  /* -------------------  NAVMENU  ------------------- */
+
+  nav {
+    margin: 2% auto;
+    padding: 0 2rem;
+  }
+  .nav-menu {
+    position: unset;
+    flex-direction: unset;
+    padding: 0;
+    justify-content: flex-end;
+    margin: auto 0;
+    height: auto;
+  }
+
+  #navheader button {
+    display: none;
+  }
+
+  .navlink:hover {
+    text-decoration: underline;
+  }
+  .splash_img {
+    display: none;
+  }
+
+  /* ***********  footer  *********** */
+
+  .footer_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* -------------------  Frontpage  ------------------- */
+
+  .article_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .splash_article .figure_container {
+    order: 2;
+  }
+
+  .section_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* -------------------  Portfolio  ------------------- */
+
+  #projects .figure_container {
+    display: flex;
+  }
+  /* -------------------  About  ------------------- */
+  .personal_interests .figure_container {
+    order: 1;
+  }
+  .personal_interests .text_container {
+    order: 2;
+  }
+}
