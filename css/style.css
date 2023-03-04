@@ -133,9 +133,9 @@ nav button {
   left: 0;
 }
 
-.socials_on_side {
+/* .socials_on_side {
   display: none;
-}
+} */
 
 main {
   max-width: 1200px;
@@ -143,6 +143,10 @@ main {
 }
 
 /* --------------------------------  Frontpage -------------------------------- */
+
+.socials_on_side {
+  display: none;
+}
 
 main > article {
   margin: 2rem 1rem 0;
@@ -233,20 +237,15 @@ label {
 
 /* -------------------------- Portfolio ---------------------- */
 
-#projects img {
-  box-shadow: 20px 15px var(--clr_white), 20px 15px 0px 1px var(--clr_black);
+.project_image img {
+  max-width: 100%;
 }
-
-#projects .figure_container .project {
-  display: grid;
-  margin: 0 auto;
+.project .project_focus {
+  margin-block-start: 3rem;
 }
-#projects .figure_container .project h3 {
-  margin: 2rem 0 1rem;
-}
-
-#projects .figure_container .project img {
-  margin-block-end: 2rem;
+.project_brief,
+.project_focus {
+  font-weight: 700;
 }
 
 /* -------------------------- About ---------------------- */
@@ -322,20 +321,26 @@ footer a {
   /* -------------------  NAVMENU  ------------------- */
 
   .socials_on_side {
-    display: flex;
-    position: fixed;
-    top: 40%;
+    margin: 2rem 0;
+    display: block;
   }
+
   .socialmedia_on_side {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .socials_on_side li {
     list-style: none;
+  }
+
+  .socials_on_side li a img {
     width: 50px;
-    margin: 0 0 0 1rem;
+    filter: invert(32%) sepia(77%) saturate(0%) hue-rotate(133deg) brightness(83%) contrast(101%);
   }
-  .socialmedia_on_side img {
-    width: 100%;
-  }
-  .socialmedia_on_side img:hover {
-    transition: 100ms ease-in-out;
+
+  .socials_on_side li a img:hover {
+    transition: 0.3s ease-in-out;
     transform: scale(1.2);
   }
 
@@ -346,6 +351,7 @@ footer a {
   nav {
     margin: 0 auto;
     padding: 0 10%;
+    z-index: 1;
   }
   .nav-menu {
     position: unset;
@@ -375,11 +381,6 @@ footer a {
   .nav-menu li a:hover::after {
     width: 100%;
   }
-
-  /* .nav-menu li a:hover {
-    transition: all 0.3s ease-in-out;
-    font-weight: 600;
-  } */
 
   .splash_img {
     display: none;
@@ -420,9 +421,32 @@ footer a {
   }
 
   /* -------------------  Portfolio  ------------------- */
-
+  .project {
+    margin-block-start: 6rem;
+  }
   #projects .figure_container {
     display: flex;
+  }
+  .project_title {
+    margin: 1.5rem auto;
+  }
+  .projects > h2 {
+    text-align: start;
+    font-size: 3.3rem;
+    margin-block-end: 3rem;
+    font-weight: 900;
+  }
+
+  .project_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .project_brief {
+    margin: 0;
+  }
+  .project_content.switched .project_image {
+    order: 2;
   }
   /* -------------------  About  ------------------- */
   .personal_interests .figure_container {
@@ -433,8 +457,20 @@ footer a {
   }
 }
 
-@media (min-width: 1200px) {
-  main {
-    padding: 0;
+@media (min-width: 1000px) {
+  .project_content {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .project_content.switched {
+    grid-template-columns: 2fr 1fr;
+  }
+  .project_texts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .project .project_focus {
+    margin-block-start: 0;
   }
 }
